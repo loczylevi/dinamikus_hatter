@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden; /* Elrejti a kifutó részeket */
+    }
+
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    @keyframes moveInCircle {
+      0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateX(calc(100vw + 100px)) translateY(calc(100vh + 100px)) rotate(360deg);
+      }
+    }
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      background-color: blue;
+      border-radius: 50%;
+      position: absolute;
+      animation: moveInCircle 4s linear infinite;
+    }
+
+    /* Több kis kör hozzáadása */
+    .circle:nth-child(2) {
+      background-color: red;
+      animation-delay: 1s; /* Késleltetés az animációk között */
+    }
+
+    .circle:nth-child(3) {
+      background-color: green;
+      animation-delay: 2s;
+    }
+
+    /* ... folytathatod a körök hozzáadását */
+  </style>
+</head>
+<body>
+  <div class="background">
+    <!-- Több kis kör hozzáadása -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <!-- ... folytathatod a körök hozzáadását -->
+  </div>
+</body>
+</html>
