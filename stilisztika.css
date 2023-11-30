@@ -13,7 +13,10 @@ body{
     border-radius: 25px;
     position: relative; /* Fontos: az elrendezési konténer pozícióját állítsuk be itt */
     z-index: 1;
-    /*opacity: 0.5;*/
+    opacity: 0.5;
+}
+.elol{
+  z-index: 1;
 }
 
 
@@ -51,7 +54,18 @@ body{
     position: relative;
     animation: example 40s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
     border-radius: 100%;
-    z-index:-1
+    z-index:-1;
+  }
+
+  .gomb69 {
+    width: 150px;
+    height: 150px;
+    background-image: linear-gradient(gold, #D2042D, gold);
+    position: relative;
+    animation: example 50s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
+    animation-direction: reverse; 
+    border-radius: 100%;
+    z-index:-1;
   }
 
 .gomb2 {
@@ -62,40 +76,40 @@ body{
     animation: example2 40s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
     border-radius: 100%;
     animation-direction: reverse;  
-    z-index:-1
+    z-index:-1;
   }
 
   .gomb3 {
     width: 450px;
     height: 450px;
-    background-image: linear-gradient(to bottom right, #880808, #CC7722, #811331);
+    background-image: linear-gradient(to bottom right, yellow, red, yellow);
+    position: relative;
+    animation: example 100s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
+    border-radius: 100%;
+    animation-direction: reverse;  
+    z-index:-2;
+  }
+  /*gold, #CC7722, rgb(116, 0, 0), #CC7722, gold*/
+  .gomb4 {
+    width: 550px;
+    height: 550px;
+    background-image: radial-gradient(gold, red, gold);
     position: relative;
     animation: example2 180s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
     border-radius: 100%;
     animation-direction: reverse;  
-    z-index:-2
-  }
-
-  .gomb4 {
-    width: 550px;
-    height: 550px;
-    background-image: linear-gradient(180deg, #722F37, #CC7722);
-    position: relative;
-    animation: example2 80s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
-    border-radius: 100%;
-    animation-direction: reverse;  
-    z-index:-2
+    z-index:-3;
   }
 
   .gomb11 {
     width: 150px;
     height: 150px;
-    background-image: linear-gradient(red, #FFBF00);
+    background-image: linear-gradient(#FFBF00, red, #FFBF00);
     position: relative;
     animation-direction: reverse;
-    animation: example 40s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
+    animation: example 60s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
     border-radius: 100%;
-    z-index:-1
+    z-index:-1;
     
   }
 
@@ -106,7 +120,7 @@ body{
     position: relative;
     animation: example2 40s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
     border-radius: 100%; 
-    z-index:-1
+    z-index:-1;
   }
 
   .gomb33 {
@@ -115,9 +129,9 @@ body{
     background-color: #FFC000;
     background-image: linear-gradient(to bottom right, #FFC000, rgb(153, 0, 0));
     position: relative;
-    animation: example2 40s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
+    animation: example2 80s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
     border-radius: 100%;
-    z-index:-2
+    z-index:-2;
   }
 
   .gomb44 {
@@ -125,9 +139,9 @@ body{
     height: 550px;
     background-image: linear-gradient(to bottom right, yellow, rgb(153, 0, 0), red, yellow);
     position: relative;
-    animation: example2 40s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
+    animation: example2 120s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
     border-radius: 100%; 
-    z-index:-2
+    z-index:-2;
   }
   
 @keyframes example {
@@ -153,9 +167,9 @@ body{
       
       }
       100%{
-        transform:rotate(960deg)
-                  translate(-990px)
-                  rotate(-960deg);
+        transform:rotate(600deg)
+                  translate(-600px)
+                  rotate(-600deg);
       }
 
 }
@@ -171,10 +185,87 @@ body{
   }
   
   .circle {
-    width: 100px;
-    height: 100px;
-    background-color: blue;
+    width: 150px;
+    height: 150px;
+    background-image: linear-gradient(red, yellow);
     border-radius: 50%;
     position: absolute;
-    animation: moveOut 4s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
+    animation: moveOut 50s linear infinite; /* Végtelen ismétlés 4 másodperces időtartammal */
   }
+
+
+
+
+  @keyframes moveInCircle {
+    0% {
+      transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: translateX(calc(-50vw + 10px)) translateY(calc(100vh + 100px)) rotate(360deg);
+                    /*milyen szögbe mennyenek a golyok*/         /*mennyi ideig mennyenek*/
+    }
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+    background-image: linear-gradient(red, yellow);
+    border-radius: 50%;
+    position: absolute;
+    animation: moveInCircle 20s linear infinite;
+  }
+
+  /* Több kis kör hozzáadása */
+  .circle:nth-child(2) {
+    animation-delay: 50s; /* Késleltetés az animációk között */
+  }
+
+  .circle:nth-child(3) {
+    animation-delay: 100s;
+  }
+
+  .circle:nth-child(4) {
+    animation-delay: 150s;
+  }
+
+  .circle:nth-child(5) {
+    animation-delay: 200s;
+  }
+
+
+@media (max-width: 1205px) {
+    .gomb{
+       display: none;
+    }
+    .circle {
+      display: none;
+   }
+   .gomb44{
+    display: none;
+ }
+ .gomb33{
+  display: none;
+}
+  .gomb22{
+    display: none;
+ }
+  .gomb11{
+    display: none;
+ }
+  .gomb{
+    display: none;
+ }
+  .gomb2{
+    display: none;
+ }
+  .gomb3{
+    display: none;
+ }
+  .gomb4{
+    display: none;
+ }
+  .gomb69{
+    display: none;
+ }
+}
+  
